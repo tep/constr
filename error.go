@@ -24,6 +24,11 @@ package constr
 // Error is an error that's a string -- and can thus be a const value.
 type Error string
 
+// Sentinel is a convenience alias for Error -- since, in this context, there
+// are times when the term "sentinel" is a more semantically accurate
+// description of what's being declared.
+type Sentinel = Error
+
 // Error implements error for Error.
 func (e Error) Error() string {
 	return string(e)
